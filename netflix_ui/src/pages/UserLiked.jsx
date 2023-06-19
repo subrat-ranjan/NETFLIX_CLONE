@@ -5,10 +5,9 @@ import { fetchMovies, getGenres, getUserLikedMovies } from "../store";
 import { onAuthStateChanged } from "firebase/auth";
 import { firebaseAuth } from "../utils/firebase-config";
 import Navbar from "../components/Navbar";
-import Slider from "../components/Slider";
-import NotAvailable from "./NotAvailable";
+
 import styled from "styled-components";
-import SelectGenre from "../components/SelectGenre";
+
 import Card from "../components/Card";
 
 export default function UserLiked() {
@@ -50,7 +49,7 @@ export default function UserLiked() {
         <h1> My list</h1>
         <div className="grid flex">
           {movies.map((movie, index) => {
-            return <Card movieData={movie} index={index} key={movie.id} isLiked={true} />;
+            return <Card movieData={movie} index={index} key={index} isLiked={true} />;
           })}
         </div>
       </div>
