@@ -31,12 +31,6 @@ export default function UserLiked() {
     }
   }, [email]);
 
-  //   useEffect(() => {
-  //     if (genresLoaded) {
-  //       dispatch(fetchMovies({ type: "movie" }));
-  //     }
-  //   }, [genresLoaded]);
-
   window.onscroll = () => {
     setIsScrolled(window.pageYOffset === 0 ? false : true);
     return () => (window.onscroll = null);
@@ -49,7 +43,7 @@ export default function UserLiked() {
         <h1> My list</h1>
         <div className="grid flex">
           {movies.map((movie, index) => {
-            return <Card movieData={movie} index={index} key={index} isLiked={true} />;
+            return <Card movieData={movie} index={index} key={movie.id} isLiked={true} />;
           })}
         </div>
       </div>

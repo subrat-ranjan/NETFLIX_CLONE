@@ -28,7 +28,7 @@ export default function Card({ movieData, isLiked = false }) {
   const dispatch = useDispatch();
   const addToList = async () => {
     try {
-      await axios.post("http://localhost:5000/api/user/add", { email, data: movieData });
+      await axios.post("https://clone-netflix-0uf7.onrender.com/api/user/add", { email, data: movieData });
     } catch (error) {
       console.log(error);
     }
